@@ -1,4 +1,4 @@
-import Booking from "../models/Booking.js";
+import Booking from "../models/booking";
 import { v4 as uuidv4 } from "uuid";
 
 function calculatePrice(mode, weight) {
