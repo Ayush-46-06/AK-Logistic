@@ -1,17 +1,83 @@
-
 .about {
-    display: flex;
-    gap: 90px;
-    align-items: center;
-    padding: 50px;
-    background: var(--bg-black-50);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 80vh;
-    justify-content:start;
-
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  padding: 40px;
+  background: var(--bg-black-50);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: start;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  height: auto; /* remove fixed height */
 }
 
-.about .image img:hover{
-    transform: scale(1);
+.about .image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.about .image img:hover {
+  transform: scale(1.05);
+}
+
+.about .cont {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.about p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* 🔽 Responsive tweaks */
+@media (max-width: 1024px) {
+  .about {
+    gap: 40px;
+    padding: 30px;
+  }
+  .about h2 {
+    font-size: 1.6rem;
+  }
+  .about p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .about .image img {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .about .cont {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 15px;
+    gap: 20px;
+  }
+  .about h2 {
+    font-size: 1.4rem;
+  }
+  .about p {
+    font-size: 0.9rem;
+  }
+  .about .image img {
+    width: 100%;
+  }
 }

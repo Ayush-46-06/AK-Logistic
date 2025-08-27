@@ -31,3 +31,8 @@
         left: 100%;
     }
 }
+@media (max-width: 580px) {
+    .truck {
+        font-size: 25rem;  /* Smaller truck on small screens */
+    }
+}

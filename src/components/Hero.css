@@ -1,11 +1,11 @@
 .hero {
   text-align: center;
   padding: 50px;
-   background: transparent;
+  background: transparent;
   color: var(--text-black-900);
   z-index: 1;
-  width: 100vw;
-  height: 85vh;
+  width: 100%;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,19 +16,19 @@
 
 /* Smooth fade-in animation */
 .hero h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive scaling */
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
   animation: fadeInDown 1.5s ease-in-out;
+  line-height: 1.2;
 }
 
 .hero p {
   margin-top: 15px;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
   opacity: 0.9;
   animation: fadeInUp 2s ease-in-out;
-  
 }
 
 .btn {
@@ -46,7 +46,7 @@
 
 .btn:hover {
   background: linear-gradient(135deg, #ff9a76, #f36d6d);
-  transform: scale(1.5);
+  transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -71,36 +71,53 @@
   left: 0;
 }
 
-/* Animations */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
+/* 🔽 Responsive Tweaks */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 40px 20px;
+    min-height: 75vh;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .btn {
+    font-size: 0.95rem;
+    padding: 10px 22px;
   }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
+/* Mobile Landscape + Portrait */
+@media (max-width: 768px) {
+  .hero {
+    padding: 30px 15px;
+    min-height: 70vh;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .hero h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
+/* Small Phones */
+@media (max-width: 480px) {
+  .hero {
+    padding: 20px 10px;
+    min-height: 65vh;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
+  .hero h1 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .btn {
+    font-size: 0.85rem;
+    padding: 8px 18px;
   }
 }

@@ -1,54 +1,123 @@
-.service-cards{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 70px;
-    padding: 20px;
-}
-.services{
-    background: var(--bg-black-50);
-    color: var(--text-black-900);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    width: 196vh;
-    height: 85vh;
-}
-.services h2{
-    font-size: 2rem;
-    margin-bottom: 50px;
-}
-.card{
-    background: var(--bg-black-100);
-    color: var(--text-black-900);
-    padding: 20px;
-    border-radius: 15px;
-    width: 300px;
-    height: 430px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+.services {
+  background: var(--bg-black-50);
+  color: var(--text-black-900);
+  padding: 40px 20px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 1200px; /* container size */
+  margin: 0 auto; /* center horizontally */
+  width: 100%;
+  min-height: auto; /* remove fixed vh */
 }
 
-.img-t{
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    padding: 10px;
-    margin: 10px;
+.services h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: 40px;
 }
-.l{
-    margin-top: 5px;
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px;
 }
-.card h3{
+
+.card {
+  background: var(--bg-black-100);
+  color: var(--text-black-900);
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.img-t {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 10px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin: 8px 0;
+}
+
+.card p {
+  font-size: 1rem;
+  margin: 5px 0;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* 🔽 Responsive Tweaks */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .services {
+    padding: 30px 15px;
+  }
+  .card {
+    width: 260px;
+    min-height: 350px;
+  }
+}
+
+/* Mobile Landscape + Portrait */
+@media (max-width: 768px) {
+  .services h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .service-cards {
+    gap: 25px;
+  }
+  .card {
+    width: 80%;
+    min-height: auto;
+    padding: 15px;
+  }
+  .img-t {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .services {
+    padding: 20px 10px;
+  }
+  .services h2 {
     font-size: 1.5rem;
-    margin: 10px 0;
-
-}
-.card p{
-    font-size: 1rem;
-    margin: 10px 0;
-    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+  .card {
+    width: 100%;
+    padding: 12px;
+  }
+  .img-t {
+    width: 100px;
+    height: 100px;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+  }
 }
