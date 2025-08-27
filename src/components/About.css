@@ -1,0 +1,17 @@
+
+.about {
+    display: flex;
+    gap: 90px;
+    align-items: center;
+    padding: 50px;
+    background: var(--bg-black-50);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 80vh;
+    justify-content:start;
+
+}
+
+.about .image img:hover{
+    transform: scale(1);
+}

@@ -1,0 +1,106 @@
+.hero {
+  text-align: center;
+  padding: 50px;
+   background: transparent;
+  color: var(--text-black-900);
+  z-index: 1;
+  width: 100vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Smooth fade-in animation */
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInDown 1.5s ease-in-out;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  animation: fadeInUp 2s ease-in-out;
+  
+}
+
+.btn {
+  margin-top: 25px;
+  background: linear-gradient(135deg, #f36d6d, #ff9a76);
+  color: #fff;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ff9a76, #f36d6d);
+  transform: scale(1.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98vw;
+  height: 95vh;
+  overflow: hidden;
+  z-index: -1;
+  margin: 5px;
+  border-radius: 40px;
+}
+
+.hero-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
