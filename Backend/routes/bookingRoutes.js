@@ -4,7 +4,8 @@ import {
   trackBooking,
   getAllBookings,
   updateBookingStatus
-} from "../Controllers/bookingController.js";
+} from "../controllers/bookingController.js";
+
 const router = express.Router();
 
 router.post("/book", createBooking);
