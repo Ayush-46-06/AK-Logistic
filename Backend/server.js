@@ -23,9 +23,6 @@ app.use("/api", bookingRoutes);
 app.use("/api/contact", contactRoutes)
 
 // Connect to MongoDB and start server
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("✅ MongoDB Connected"))
     .catch(err => console.error("❌ Error:", err));
