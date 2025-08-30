@@ -23,6 +23,6 @@ app.use("/api", bookingRoutes);
 app.use("/api/contact", contactRoutes)
 
 // Connect to MongoDB and start server
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, { dbName: " Subscription tracker" })
     .then(() => console.log("✅ MongoDB Connected"))
     .catch(err => console.error("❌ Error:", err));
